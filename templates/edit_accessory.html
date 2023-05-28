@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Accessory</title>
+</head>
+<body>
+    <h1>Edit Accessory</h1>
+    <form method="post">
+        <input type="hidden" id="name_of_accessory" name="name_of_accessory" value="{{ accessory[0] }}">
+        <label for="quantity_of_accessory">Quantity of accessory:</label>
+        <input type="text" id="quantity_of_accessory" name="quantity_of_accessory" value="{{ accessory[1] }}">
+        <br>
+        <label for="type_of_accessory">Type of accessory:</label>
+        <input type="text" id="type_of_accessory" name="type_of_accessory" value="{{ accessory[2] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_accessory">Back to Accessory List</a>
+</body>
+</html>

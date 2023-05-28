@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backup List</title>
+</head>
+<body>
+    <h1>Backup List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date of Backup</th>
+                <th>Content of Backup</th>
+                <th>Size of Backup</th>
+                <th>Responsible User</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for backup in backup %}
+            <tr>
+                <td>{{ backup[0] }}</td>
+                <td>{{ backup[1] }}</td>
+                <td>{{ backup[2] }}</td>
+                <td>{{ backup[3] }}</td>
+                <td>
+                    <a href="/edit_backup/{{ backup[1] }}">Edit</a>
+                    <a href="/delete_backup/{{ backup[1] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add_backup">Add Backup</a>
+    <a href="/">Back to list</a>
+</body>
+</html>
