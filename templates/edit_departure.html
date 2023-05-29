@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Departure</title>
+</head>
+<body>
+    <h1>Edit Departure</h1>
+    <form method="post">
+        <input type="hidden" id="To_Client_address_of_client" name="To_Client_address_of_client" value="{{ departure[4] }}">
+        <br>
+        <label for="type_of_service">Type of service:</label>
+        <input type="text" id="type_of_service" name="type_of_service" value="{{ departure[0] }}">
+        <br>
+        <label for="price_of_service">Price of service:</label>
+        <input type="text" id="price_of_service" name="price_of_service" value="{{ departure[1] }}">
+        <br>
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" value="{{ departure[2] }}">
+        <br>
+        <label for="status_of_departure">Status of departure:</label>
+        <input type="text" id="status_of_departure" name="status_of_departure" value="{{ departure[3] }}">
+        <br>
+        <label for="responsible">Responsible:</label>
+        <input type="text" id="responsible" name="responsible" value="{{ departure[5] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_departure">Back to departure List</a>
+</body>
+</html>

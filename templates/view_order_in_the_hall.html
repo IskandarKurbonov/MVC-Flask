@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order in the hall List</title>
+</head>
+<body>
+    <h1>Order in the hall List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date of order</th>
+                <th>Price for technique</th>
+                <th>Quantity of technique</th>
+                <th>Client name</th>
+                <th>Technique type</th>
+                <th>Responsible user</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_in_the_hall in order_in_the_hall %}
+            <tr>
+                <td>{{ order_in_the_hall[0] }}</td>
+                <td>{{ order_in_the_hall[1] }}</td>
+                <td>{{ order_in_the_hall[2] }}</td>
+                <td>{{ order_in_the_hall[3] }}</td>
+                <td>{{ order_in_the_hall[4] }}</td>
+                <td>{{ order_in_the_hall[5] }}</td>
+                <td>
+                    <a href="/edit_order_in_the_hall/{{ order_in_the_hall[5] }}">Edit</a>
+                    <a href="/delete_order_in_the_hall/{{ order_in_the_hall[5] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add_order_in_the_hall">Add order_in_the_hall</a>
+    <a href="/">Back to list</a>
+</body>
+</html>

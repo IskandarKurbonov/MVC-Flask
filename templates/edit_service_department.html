@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Service department</title>
+</head>
+<body>
+    <h1>Edit Service department</h1>
+    <form method="post">
+        <input type="hidden" id="post_code_of_service_department" name="post_code_of_service_department" value="{{ service_department[3] }}">
+        <br>
+        <label for="address_of_service_department">Address of service department:</label>
+        <input type="text" id="address_of_service_department" name="address_of_service_department" value="{{ service_department[0] }}">
+        <br>
+        <label for="quantity_stuff_in_service_department">Quantity stuff in service department:</label>
+        <input type="text" id="quantity_stuff_in_service_department" name="quantity_stuff_in_service_department" value="{{ service_department[1] }}">
+        <br>
+        <label for="number_phone_of_service_department">Number phone:</label>
+        <input type="text" id="number_phone_of_service_department" name="number_phone_of_service_department" value="{{ service_department[2] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_service_department">Back to Service department List</a>
+</body>
+</html>

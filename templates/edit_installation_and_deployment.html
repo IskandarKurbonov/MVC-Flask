@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Installation and deployment</title>
+</head>
+<body>
+    <h1>Edit Installation and deployment</h1>
+    <form method="post">
+        <input type="hidden" id="Users_login_responsible_of_installation" name="Users_login_responsible_of_installation" value="{{ installation_and_deployment[5] }}">
+        <br>
+        <label for="date_of_installation">Date of installation:</label>
+        <input type="date" id="date_of_installation" name="date_of_installation" value="{{ installation_and_deployment[0] }}">
+        <br>
+        <label for="type_of_installation">Type of installation:</label>
+        <input type="text" id="type_of_installation" name="type_of_installation" value="{{ installation_and_deployment[1] }}">
+        <br>
+        <label for="status_of_installation">Status of installation:</label>
+        <input type="text" id="status_of_installation" name="status_of_installation" value="{{ installation_and_deployment[2] }}">
+        <br>
+        <label for="duration_time">Duration time:</label>
+        <input type="text" id="duration_time" name="duration_time" value="{{ installation_and_deployment[3] }}">
+        <br>
+        <label for="result">Result:</label>
+        <input type="text" id="result" name="result" value="{{ installation_and_deployment[4] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_installation_and_deployment">Back to Installation and deployment List</a>
+</body>
+</html>

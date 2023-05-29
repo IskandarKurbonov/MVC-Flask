@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Purchase</title>
+</head>
+<body>
+    <h1>Edit Purchase</h1>
+    <form method="post">
+        <input type="hidden" id="name_of_product" name="name_of_product" value="{{ purchase[0] }}">
+        <br>
+        <label for="quantity_of_product">Quantity of product:</label>
+        <input type="text" id="quantity_of_product" name="quantity_of_product" value="{{ purchase[1] }}">
+        <br>
+        <label for="description_of_product">Description of product:</label>
+        <input type="text" id="description_of_product" name="description_of_product" value="{{ purchase[2] }}">
+        <br>
+        <label for="factory_number">Factory number:</label>
+        <input type="text" id="factory_number" name="factory_number" value="{{ purchase[3] }}">
+        <br>
+        <label for="serial_number">Serial number:</label>
+        <input type="text" id="serial_number" name="serial_number" value="{{ purchase[4] }}">
+        <br>
+        <label for="purchase_amount">Purchase amount:</label>
+        <input type="text" id="purchase_amount" name="purchase_amount" value="{{ purchase[5] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_purchase">Back to Purchase List</a>
+</body>
+</html>

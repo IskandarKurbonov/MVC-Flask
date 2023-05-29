@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Stock</title>
+</head>
+<body>
+    <h1>Edit Stock</h1>
+    <form method="post">
+        <input type="hidden" id="Users_login_responsible_of_stock" name="Users_login_responsible_of_stock" value="{{ stock[4] }}">
+        <br>
+        <label for="address_of_stock">Adress of stock:</label>
+        <input type="text" id="address_of_stock" name="address_of_stock" value="{{ stock[0] }}">
+        <br>
+        <label for="quantity_of_stuff">Quantity of stock:</label>
+        <input type="text" id="quantity_of_stuff" name="quantity_of_stuff" value="{{ stock[1] }}">
+        <br>
+        <label for="type_of_stock">Type of stock:</label>
+        <input type="text" id="type_of_stock" name="type_of_stock" value="{{ stock[2] }}">
+        <br>
+        <label for="number_phone_of_stock">Number phone of stock:</label>
+        <input type="text" id="number_phone_of_stock" name="number_phone_of_stock" value="{{ stock[3] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_stock">Back to Stock List</a>
+</body>
+</html>

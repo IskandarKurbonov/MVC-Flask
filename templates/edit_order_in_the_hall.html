@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Order in the hall</title>
+</head>
+<body>
+    <h1>Edit Order in the hall</h1>
+    <form method="post">
+        <input type="hidden" id="Users_loginresponsible_for_order" name="Users_loginresponsible_for_order" value="{{ order_in_the_hall[5] }}">
+        <br>
+        <label for="date_of_order">Date of order:</label>
+        <input type="date" id="date_of_order" name="date_of_order" value="{{ order_in_the_hall[0] }}">
+        <br>
+        <label for="price_for_technique">Price for technique:</label>
+        <input type="text" id="price_for_technique" name="price_for_technique" value="{{ order_in_the_hall[1] }}">
+        <br>
+        <label for="quantity_of_technique">Quantity of technique:</label>
+        <input type="text" id="quantity_of_technique" name="quantity_of_technique" value="{{ order_in_the_hall[2] }}">
+        <br>
+        <label for="Client_name_of_client">Client name:</label>
+        <input type="text" id="Client_name_of_client" name="Client_name_of_client" value="{{ order_in_the_hall[3] }}">
+        <br>
+        <label for="Technique_type_of_technique">Technique type:</label>
+        <input type="text" id="Technique_type_of_technique" name="Technique_type_of_technique" value="{{ order_in_the_hall[4] }}">
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <br>
+    <a href="/view_order_in_the_hall">Back to Order in the hall List</a>
+</body>
+</html>

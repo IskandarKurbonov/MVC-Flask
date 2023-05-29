@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technique List</title>
+</head>
+<body>
+    <h1>Technique List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name of technique</th>
+                <th>Type of technique</th>
+                <th>Serial number</th>
+                <th>Factory number</th>
+                <th>Quantity of technique</th>
+                <th>Responsible user</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for technique in technique %}
+            <tr>
+                <td>{{ technique[0] }}</td>
+                <td>{{ technique[1] }}</td>
+                <td>{{ technique[2] }}</td>
+                <td>{{ technique[3] }}</td>
+                <td>{{ technique[4] }}</td>
+                <td>{{ technique[5] }}</td>
+                <td>
+                    <a href="/edit_technique/{{ technique[5] }}">Edit</a>
+                    <a href="/delete_technique/{{ technique[5] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add_technique">Add Technique</a>
+    <a href="/">Back to list</a>
+</body>
+</html>

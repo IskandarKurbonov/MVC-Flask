@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Departure List</title>
+</head>
+<body>
+    <h1>Departure List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Type of service</th>
+                <th>Price of service</th>
+                <th>Result</th>
+                <th>Status of departure</th>
+                <th>To client</th>
+                <th>Responsible</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for departure in departure %}
+            <tr>
+                <td>{{ departure[0] }}</td>
+                <td>{{ departure[1] }}</td>
+                <td>{{ departure[2] }}</td>
+                <td>{{ departure[3] }}</td>
+                <td>{{ departure[4] }}</td>
+                <td>{{ departure[5] }}</td>
+                <td>
+                    <a href="/edit_departure/{{ departure[4] }}">Edit</a>
+                    <a href="/delete_departure/{{ departure[4] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add_departure">Add departure</a>
+    <a href="/">Back to list</a>
+</body>
+</html>

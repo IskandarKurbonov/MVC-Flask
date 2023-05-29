@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Installation and deployment List</title>
+</head>
+<body>
+    <h1>Installation and deployment List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Date of installation</th>
+                <th>Type of installation</th>
+                <th>Status of installation</th>
+                <th>Duration time</th>
+                <th>Result</th>
+                <th>Responsible user</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for installation_and_deployment in installation_and_deployment %}
+            <tr>
+                <td>{{ installation_and_deployment[0] }}</td>
+                <td>{{ installation_and_deployment[1] }}</td>
+                <td>{{ installation_and_deployment[2] }}</td>
+                <td>{{ installation_and_deployment[3] }}</td>
+                <td>{{ installation_and_deployment[4] }}</td>
+                <td>{{ installation_and_deployment[5] }}</td>
+                <td>
+                    <a href="/edit_installation_and_deployment/{{ installation_and_deployment[5] }}">Edit</a>
+                    <a href="/delete_installation_and_deployment/{{ installation_and_deployment[5] }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/add_installation_and_deployment">Add installation_and_deployment</a>
+    <a href="/">Back to list</a>
+</body>
+</html>
