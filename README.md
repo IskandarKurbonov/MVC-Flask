@@ -27,3 +27,7 @@
 
 ![image](https://github.com/DmitriyLebedevNarfu/MVC-Flask/assets/134889373/7521aed5-2da1-4a9a-8857-231877d3e141)
 
+## Запуск tests.py
+* После успешного запуска тестов для всех классов (14 классов) согласно таблицам из базы данных, можно увидеть следующий результат
+
+![image](https://github.com/DmitriyLebedevNarfu/MVC-Flask/assets/134889373/b83e69d5-6f12-45ad-adbe-3b89aa3e45fd)
