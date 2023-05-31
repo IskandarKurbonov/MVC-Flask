@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 29 2023 г., 21:37
+-- Время создания: Май 31 2023 г., 09:51
 -- Версия сервера: 10.4.27-MariaDB
 -- Версия PHP: 8.2.0
 
@@ -33,13 +33,6 @@ CREATE TABLE `accessory` (
   `type_of_accessory` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `accessory`
---
-
-INSERT INTO `accessory` (`name_of_accessory`, `quantity_of_accessory`, `type_of_accessory`) VALUES
-('Accessory1', 214, 'Type');
-
 -- --------------------------------------------------------
 
 --
@@ -52,13 +45,6 @@ CREATE TABLE `backup` (
   `size_of_backup` int(11) DEFAULT NULL,
   `users_login_responsible_of_backup` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `backup`
---
-
-INSERT INTO `backup` (`date_of_backup`, `content_of_backup`, `size_of_backup`, `users_login_responsible_of_backup`) VALUES
-('2023-05-28', 'Backup', 124, 'Dmitriy');
 
 -- --------------------------------------------------------
 
@@ -73,13 +59,6 @@ CREATE TABLE `client` (
   `number_phone_of_client` int(11) DEFAULT NULL,
   `type_of_appeals` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `client`
---
-
-INSERT INTO `client` (`name_of_client`, `surname_of_client`, `address_of_client`, `number_phone_of_client`, `type_of_appeals`) VALUES
-('Dmitriy', 'Surname', 'Address', 21421, 'Type');
 
 -- --------------------------------------------------------
 
@@ -96,13 +75,6 @@ CREATE TABLE `dealer` (
   `number_of_dealer` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `dealer`
---
-
-INSERT INTO `dealer` (`name_of_dealer`, `address_of_dealer`, `type_of_services_from_dealer`, `payment_to_the_dealer`, `date_of_contract_with_dealer`, `number_of_dealer`) VALUES
-('Dmitriy', 'Arkhangelsk', 'service', 1, '2022-02-22', 142);
-
 -- --------------------------------------------------------
 
 --
@@ -117,13 +89,6 @@ CREATE TABLE `delivery` (
   `from_Stock_address_of_stock` varchar(100) NOT NULL,
   `to_Client_address_of_client` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `delivery`
---
-
-INSERT INTO `delivery` (`name_of_courier`, `surname_of_courier`, `name_of_product`, `price_with_delivery`, `from_Stock_address_of_stock`, `to_Client_address_of_client`) VALUES
-('Dmitriy', 'Lebedev', 'Product', 1241, 'Stock', 'Client');
 
 -- --------------------------------------------------------
 
@@ -140,13 +105,6 @@ CREATE TABLE `departure` (
   `responsible` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `departure`
---
-
-INSERT INTO `departure` (`type_of_service`, `price_of_service`, `result`, `status_of_departure`, `To_Client_address_of_client`, `responsible`) VALUES
-('Type of service', '21412', 'Done', 'Wait', 'lebedev', 'Dmitriy');
-
 -- --------------------------------------------------------
 
 --
@@ -161,13 +119,6 @@ CREATE TABLE `installation_and_deployment` (
   `result` varchar(45) DEFAULT NULL,
   `Users_login_responsible_of_installation` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `installation_and_deployment`
---
-
-INSERT INTO `installation_and_deployment` (`date_of_installation`, `type_of_installation`, `status_of_installation`, `duration_time`, `result`, `Users_login_responsible_of_installation`) VALUES
-('2022-08-28', 'Type', 'Status', 213.121, 'Result', 'Dmitriy');
 
 -- --------------------------------------------------------
 
@@ -184,13 +135,6 @@ CREATE TABLE `order_in_the_hall` (
   `Users_loginresponsible_for_order` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `order_in_the_hall`
---
-
-INSERT INTO `order_in_the_hall` (`date_of_order`, `price_for_technique`, `quantity_of_technique`, `Client_name_of_client`, `Technique_type_of_technique`, `Users_loginresponsible_for_order`) VALUES
-('2022-05-30', 142, 241, 'Дмитрий', 'Technique', 'Lebedev');
-
 -- --------------------------------------------------------
 
 --
@@ -205,13 +149,6 @@ CREATE TABLE `purchase` (
   `serial_number` int(11) DEFAULT NULL,
   `purchase_amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `purchase`
---
-
-INSERT INTO `purchase` (`name_of_product`, `quantity_of_product`, `description_of_product`, `factory_number`, `serial_number`, `purchase_amount`) VALUES
-('Prod', 214, 'Product', 142, 12411, 214412);
 
 -- --------------------------------------------------------
 
@@ -230,13 +167,6 @@ CREATE TABLE `report_for_tax` (
   `Users_login_responsible_for_the_report` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `report_for_tax`
---
-
-INSERT INTO `report_for_tax` (`date_of_formation_report`, `date_of_sendig_report`, `signature`, `to_tax`, `from_company`, `content_of_report`, `type_of_delivery_report`, `Users_login_responsible_for_the_report`) VALUES
-('2022-05-05', '2023-05-05', 'Sign', 'To', 'Company', 'Content', 'Type', 'Responsible');
-
 -- --------------------------------------------------------
 
 --
@@ -249,13 +179,6 @@ CREATE TABLE `service_department` (
   `number_phone_of_service_department` int(11) DEFAULT NULL,
   `post_code_of_service_department` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `service_department`
---
-
-INSERT INTO `service_department` (`address_of_service_department`, `quantity_stuff_in_service_department`, `number_phone_of_service_department`, `post_code_of_service_department`) VALUES
-('Arkhangelsk', 21421, 21412, 214124);
 
 -- --------------------------------------------------------
 
@@ -271,13 +194,6 @@ CREATE TABLE `stock` (
   `Users_login_responsible_of_stock` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Дамп данных таблицы `stock`
---
-
-INSERT INTO `stock` (`address_of_stock`, `quantity_of_stuff`, `type_of_stock`, `number_phone_of_stock`, `Users_login_responsible_of_stock`) VALUES
-('Arkhangelsk', 214, 'Type', 21, 'Lebedev');
-
 -- --------------------------------------------------------
 
 --
@@ -290,15 +206,8 @@ CREATE TABLE `technique` (
   `serial_number` int(11) DEFAULT NULL,
   `factory_number` int(11) DEFAULT NULL,
   `quantity_of_technique` int(11) DEFAULT NULL,
-  `Users_login_responsible_for_the_technique` varchar(40) NOT NULL
+  `Users_login_responsible_for_the_technique` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `technique`
---
-
-INSERT INTO `technique` (`name_of_technique`, `type_of_technique`, `serial_number`, `factory_number`, `quantity_of_technique`, `Users_login_responsible_for_the_technique`) VALUES
-('Technique', 'Type2', 412421, 21412, 2141, 'Lebedev');
 
 -- --------------------------------------------------------
 
@@ -311,13 +220,6 @@ CREATE TABLE `users` (
   `password` varchar(24) DEFAULT NULL,
   `authentication` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`login`, `password`, `authentication`) VALUES
-('Dmitriy', 'sadsad', 1);
 
 --
 -- Индексы сохранённых таблиц

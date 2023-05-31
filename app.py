@@ -245,7 +245,6 @@ def delete_client(name_of_client):
     return redirect('/view_client')
 
 
-
 class Dealer:
     def __init__(self, name_of_dealer, address_of_dealer, type_of_services_from_dealer,
                  payment_to_the_dealer, date_of_contract_with_dealer, number_of_dealer):
@@ -256,13 +255,11 @@ class Dealer:
         self.date_of_contract_with_dealer = date_of_contract_with_dealer        
         self.number_of_dealer = number_of_dealer
 
-
 @app.route('/view_dealer')
 def view_dealer():
     mycursor.execute("SELECT * FROM dealer")
     dealer = mycursor.fetchall()
     return render_template('view_dealer.html', dealer=dealer)
-
 
 @app.route('/add_dealer', methods=['GET', 'POST'])
 def add_dealer():
@@ -285,7 +282,6 @@ def add_dealer():
     else:
         return render_template('add_dealer.html')
 
-
 @app.route('/edit_dealer/<string:name_of_dealer>', methods=['GET', 'POST'])
 def edit_dealer(name_of_dealer):
     mycursor.execute("SELECT * FROM dealer WHERE name_of_dealer=%s", (name_of_dealer,))
@@ -306,7 +302,6 @@ def edit_dealer(name_of_dealer):
         return redirect('/view_dealer')
     else:
         return render_template('edit_dealer.html', dealer=dealer)
-
 
 @app.route('/delete_dealer/<string:name_of_dealer>')
 def delete_dealer(name_of_dealer):
