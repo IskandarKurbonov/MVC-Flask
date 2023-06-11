@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Accessory List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Accessory List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name of accessory</th>
-                <th>Quantity of accessory</th>
-                <th>Type of accessory</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for accessory in accessory %}
-            <tr>
-                <td>{{ accessory[0] }}</td>
-                <td>{{ accessory[1] }}</td>
-                <td>{{ accessory[2] }}</td>
-                <td>
-                    <a href="/edit_accessory/{{ accessory[0] }}">Edit</a>
-                    <a href="/delete_accessory/{{ accessory[0] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_accessory">Add Accessory</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Accessory List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of accessory</th>
+                    <th>Quantity of accessory</th>
+                    <th>Type of accessory</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for accessory in accessory %}
+                <tr>
+                    <td>{{ accessory[0] }}</td>
+                    <td>{{ accessory[1] }}</td>
+                    <td>{{ accessory[2] }}</td>
+                    <td>
+                        <a href="/edit_accessory/{{ accessory[0] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_accessory/{{ accessory[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_accessory" class="btn btn-success">Add Accessory</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

@@ -3,38 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Client List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Client List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name of client</th>
-                <th>Surname of client</th>
-                <th>Address of client</th>
-                <th>Number phone</th>
-                <th>Type of appeals</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for client in client %}
-            <tr>
-                <td>{{ client[0] }}</td>
-                <td>{{ client[1] }}</td>
-                <td>{{ client[2] }}</td>
-                <td>{{ client[3] }}</td>
-                <td>{{ client[4] }}</td>
-                <td>
-                    <a href="/edit_client/{{ client[0] }}">Edit</a>
-                    <a href="/delete_client/{{ client[0] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_client">Add client</a>
-    <a href="/">Back to list</a>
+    <div class="container">    
+        <h1>Client List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of client</th>
+                    <th>Surname of client</th>
+                    <th>Address of client</th>
+                    <th>Number phone</th>
+                    <th>Type of appeals</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in client %}
+                <tr>
+                    <td>{{ client[0] }}</td>
+                    <td>{{ client[1] }}</td>
+                    <td>{{ client[2] }}</td>
+                    <td>{{ client[3] }}</td>
+                    <td>{{ client[4] }}</td>
+                    <td>
+                        <a href="/edit_client/{{ client[0] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_client/{{ client[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_client" class="btn btn-success">Add client</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

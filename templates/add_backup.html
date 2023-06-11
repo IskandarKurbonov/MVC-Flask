@@ -2,26 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add backup</title>
+    <title>Add Backup</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Add Backup</h1>
-    <form method="post">
-        <label for="date_of_backup">Date of backup:</label>
-        <input type="date" id="date_of_backup" name="date_of_backup">
+    <div class="container">
+        <h1>Add Backup</h1>
+        <form method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="date_of_backup" class="col-sm-2 control-label">Date of backup:</label>
+                <div class="col-sm-10">
+                    <input type="date" id="date_of_backup" name="date_of_backup" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content_of_backup" class="col-sm-2 control-label">Content of backup:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="content_of_backup" name="content_of_backup" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="size_of_backup" class="col-sm-2 control-label">Size of backup:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="size_of_backup" name="size_of_backup" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="users_login_responsible_of_backup" class="col-sm-2 control-label">Responsible user:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="users_login_responsible_of_backup" name="users_login_responsible_of_backup" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </form>
         <br>
-        <label for="content_of_backup">Content of backup:</label>
-        <input type="text" id="content_of_backup" name="content_of_backup">
-        <br>
-        <label for="size_of_backup">Size of backup:</label>
-        <input type="text" id="size_of_backup" name="size_of_backup">
-        <br>
-        <label for="users_login_responsible_of_backup">Responsible user:</label>
-        <input type="text" id="users_login_responsible_of_backup" name="users_login_responsible_of_backup">
-        <br>
-        <input type="submit" value="Add">
-    </form>
-    <br>
-    <a href="/view_backup">Back to Backup List</a>
+        <a href="/view_backup" class="btn btn-default">Back to Backup List</a>
+    </div>
 </body>
 </html>

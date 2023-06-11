@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Dealer List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Dealer List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name of dealer</th>
-                <th>Address of dealer</th>
-                <th>Type of services from dealer</th>
-                <th>Payment to the dealer</th>
-                <th>Date of contract with dealer</th>
-                <th>Number of dealer</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for dealer in dealer %}
-            <tr>
-                <td>{{ dealer[0] }}</td>
-                <td>{{ dealer[1] }}</td>
-                <td>{{ dealer[2] }}</td>
-                <td>{{ dealer[3] }}</td>
-                <td>{{ dealer[4] }}</td>
-                <td>{{ dealer[5] }}</td>
-                <td>
-                    <a href="/edit_dealer/{{ dealer[0] }}">Edit</a>
-                    <a href="/delete_dealer/{{ dealer[0] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_dealer">Add dealer</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Dealer List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of dealer</th>
+                    <th>Address of dealer</th>
+                    <th>Type of services from dealer</th>
+                    <th>Payment to the dealer</th>
+                    <th>Date of contract with dealer</th>
+                    <th>Number of dealer</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dealer in dealer %}
+                <tr>
+                    <td>{{ dealer[0] }}</td>
+                    <td>{{ dealer[1] }}</td>
+                    <td>{{ dealer[2] }}</td>
+                    <td>{{ dealer[3] }}</td>
+                    <td>{{ dealer[4] }}</td>
+                    <td>{{ dealer[5] }}</td>
+                    <td>
+                        <a href="/edit_dealer/{{ dealer[0] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_dealer/{{ dealer[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_dealer" class="btn btn-success">Add dealer</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

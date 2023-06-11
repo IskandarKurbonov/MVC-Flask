@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Backup</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Edit Backup</h1>
-    <form method="post">
-        <input type="hidden" id="users_login_responsible_of_backup" name="users_login_responsible_of_backup" value="{{ backup[3] }}">
-        <label for="date_of_backup">Date of backup:</label>
-        <input type="date" id="date_of_backup" name="date_of_backup" value="{{ backup[0] }}">
+    <div class="container">
+        <h1>Edit Backup</h1>
+        <form method="post" class="form-horizontal">
+            <input type="hidden" id="users_login_responsible_of_backup" name="users_login_responsible_of_backup" value="{{ backup[3] }}">
+            <div class="form-group">
+                <label for="date_of_backup" class="col-sm-2 control-label">Date of backup:</label>
+                <div class="col-sm-10">
+                    <input type="date" id="date_of_backup" name="date_of_backup" class="form-control" value="{{ backup[0] }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="content_of_backup" class="col-sm-2 control-label">Content of backup:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="content_of_backup" name="content_of_backup" class="form-control" value="{{ backup[1] }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="size_of_backup" class="col-sm-2 control-label">Size of backup:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="size_of_backup" name="size_of_backup" class="form-control" value="{{ backup[2] }}">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </form>
         <br>
-        <label for="content_of_backup">Content of backup:</label>
-        <input type="text" id="content_of_backup" name="content_of_backup" value="{{ backup[1] }}">
-        <br>
-        <label for="size_of_backup">Size of backup:</label>
-        <input type="text" id="size_of_backup" name="size_of_backup" value="{{ backup[2] }}">
-        <br>
-        <input type="submit" value="Update">
-    </form>
-    <br>
-    <a href="/view_backup">Back to Backup List</a>
+        <a href="/view_backup" class="btn btn-default">Back to Backup List</a>
+    </div>
 </body>
 </html>

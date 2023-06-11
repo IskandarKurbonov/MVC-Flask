@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Technique List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Technique List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name of technique</th>
-                <th>Type of technique</th>
-                <th>Serial number</th>
-                <th>Factory number</th>
-                <th>Quantity of technique</th>
-                <th>Responsible user</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for technique in technique %}
-            <tr>
-                <td>{{ technique[0] }}</td>
-                <td>{{ technique[1] }}</td>
-                <td>{{ technique[2] }}</td>
-                <td>{{ technique[3] }}</td>
-                <td>{{ technique[4] }}</td>
-                <td>{{ technique[5] }}</td>
-                <td>
-                    <a href="/edit_technique/{{ technique[5] }}">Edit</a>
-                    <a href="/delete_technique/{{ technique[5] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_technique">Add Technique</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Technique List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of technique</th>
+                    <th>Type of technique</th>
+                    <th>Serial number</th>
+                    <th>Factory number</th>
+                    <th>Quantity of technique</th>
+                    <th>Responsible user</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for technique in technique %}
+                <tr>
+                    <td>{{ technique[0] }}</td>
+                    <td>{{ technique[1] }}</td>
+                    <td>{{ technique[2] }}</td>
+                    <td>{{ technique[3] }}</td>
+                    <td>{{ technique[4] }}</td>
+                    <td>{{ technique[5] }}</td>
+                    <td>
+                        <a href="/edit_technique/{{ technique[5] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_technique/{{ technique[5] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_technique" class="btn btn-success">Add Technique</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

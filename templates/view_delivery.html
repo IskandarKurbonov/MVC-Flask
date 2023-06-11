@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Delivery List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Delivery List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name of courier</th>
-                <th>Surname of courier</th>
-                <th>Name of product</th>
-                <th>Price with delivery</th>
-                <th>From stock</th>
-                <th>To client</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for delivery in delivery %}
-            <tr>
-                <td>{{ delivery[0] }}</td>
-                <td>{{ delivery[1] }}</td>
-                <td>{{ delivery[2] }}</td>
-                <td>{{ delivery[3] }}</td>
-                <td>{{ delivery[4] }}</td>
-                <td>{{ delivery[5] }}</td>
-                <td>
-                    <a href="/edit_delivery/{{ delivery[0] }}">Edit</a>
-                    <a href="/delete_delivery/{{ delivery[0] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_delivery">Add delivery</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Delivery List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of courier</th>
+                    <th>Surname of courier</th>
+                    <th>Name of product</th>
+                    <th>Price with delivery</th>
+                    <th>From stock</th>
+                    <th>To client</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for delivery in delivery %}
+                <tr>
+                    <td>{{ delivery[0] }}</td>
+                    <td>{{ delivery[1] }}</td>
+                    <td>{{ delivery[2] }}</td>
+                    <td>{{ delivery[3] }}</td>
+                    <td>{{ delivery[4] }}</td>
+                    <td>{{ delivery[5] }}</td>
+                    <td>
+                        <a href="/edit_delivery/{{ delivery[0] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_delivery/{{ delivery[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_delivery" class="btn btn-success">Add delivery</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

@@ -3,38 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Stock List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Stock List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Address of stock</th>
-                <th>Quantity of stuff</th>
-                <th>Type of stock</th>
-                <th>Number phone</th>
-                <th>Responsible user for stock</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for stock in stock %}
-            <tr>
-                <td>{{ stock[0] }}</td>
-                <td>{{ stock[1] }}</td>
-                <td>{{ stock[2] }}</td>
-                <td>{{ stock[3] }}</td>
-                <td>{{ stock[4] }}</td>
-                <td>
-                    <a href="/edit_stock/{{ stock[4] }}">Edit</a>
-                    <a href="/delete_stock/{{ stock[4] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_stock">Add stock</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Stock List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Address of stock</th>
+                    <th>Quantity of stuff</th>
+                    <th>Type of stock</th>
+                    <th>Number phone</th>
+                    <th>Responsible user for stock</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stock %}
+                <tr>
+                    <td>{{ stock[0] }}</td>
+                    <td>{{ stock[1] }}</td>
+                    <td>{{ stock[2] }}</td>
+                    <td>{{ stock[3] }}</td>
+                    <td>{{ stock[4] }}</td>
+                    <td>
+                        <a href="/edit_stock/{{ stock[4] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_stock/{{ stock[4] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_stock" class="btn btn-success">Add stock</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

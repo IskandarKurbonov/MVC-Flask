@@ -3,40 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Purchase List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Purchase List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name of product</th>
-                <th>Quantity of product</th>
-                <th>Description of product</th>
-                <th>Factory number</th>
-                <th>Serial number</th>
-                <th>Purchase amount</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for purchase in purchase %}
-            <tr>
-                <td>{{ purchase[0] }}</td>
-                <td>{{ purchase[1] }}</td>
-                <td>{{ purchase[2] }}</td>
-                <td>{{ purchase[3] }}</td>
-                <td>{{ purchase[4] }}</td>
-                <td>{{ purchase[5] }}</td>
-                <td>
-                    <a href="/edit_purchase/{{ purchase[0] }}">Edit</a>
-                    <a href="/delete_purchase/{{ purchase[0] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_purchase">Add Purchase</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Purchase List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name of product</th>
+                    <th>Quantity of product</th>
+                    <th>Description of product</th>
+                    <th>Factory number</th>
+                    <th>Serial number</th>
+                    <th>Purchase amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for purchase in purchase %}
+                <tr>
+                    <td>{{ purchase[0] }}</td>
+                    <td>{{ purchase[1] }}</td>
+                    <td>{{ purchase[2] }}</td>
+                    <td>{{ purchase[3] }}</td>
+                    <td>{{ purchase[4] }}</td>
+                    <td>{{ purchase[5] }}</td>
+                    <td>
+                        <a href="/edit_purchase/{{ purchase[0] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_purchase/{{ purchase[0] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_purchase" class="btn btn-success">Add Purchase</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

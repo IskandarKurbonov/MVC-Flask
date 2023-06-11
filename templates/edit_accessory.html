@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Accessory</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Edit Accessory</h1>
-    <form method="post">
-        <input type="hidden" id="name_of_accessory" name="name_of_accessory" value="{{ accessory[0] }}">
-        <label for="quantity_of_accessory">Quantity of accessory:</label>
-        <input type="text" id="quantity_of_accessory" name="quantity_of_accessory" value="{{ accessory[1] }}">
+    <div class="container">
+        <h1>Edit Accessory</h1>
+        <form method="post" class="form-horizontal">
+            <input type="hidden" id="name_of_accessory" name="name_of_accessory" value="{{ accessory[0] }}">
+            <div class="form-group">
+                <label for="quantity_of_accessory" class="col-sm-2 control-label">Quantity of accessory:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="quantity_of_accessory" name="quantity_of_accessory" value="{{ accessory[1] }}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="type_of_accessory" class="col-sm-2 control-label">Type of accessory:</label>
+                <div class="col-sm-10">
+                    <input type="text" id="type_of_accessory" name="type_of_accessory" value="{{ accessory[2] }}" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Update" class="btn btn-success">
+                </div>
+            </div>
+        </form>
         <br>
-        <label for="type_of_accessory">Type of accessory:</label>
-        <input type="text" id="type_of_accessory" name="type_of_accessory" value="{{ accessory[2] }}">
-        <br>
-        <input type="submit" value="Update">
-    </form>
-    <br>
-    <a href="/view_accessory">Back to Accessory List</a>
+        <a href="/view_accessory" class="btn btn-default">Back to Accessory List</a>
+    </div>
 </body>
 </html>

@@ -3,36 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Backup List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Backup List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Date of Backup</th>
-                <th>Content of Backup</th>
-                <th>Size of Backup</th>
-                <th>Responsible User</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for backup in backup %}
-            <tr>
-                <td>{{ backup[0] }}</td>
-                <td>{{ backup[1] }}</td>
-                <td>{{ backup[2] }}</td>
-                <td>{{ backup[3] }}</td>
-                <td>
-                    <a href="/edit_backup/{{ backup[1] }}">Edit</a>
-                    <a href="/delete_backup/{{ backup[1] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_backup">Add Backup</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Backup List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date of Backup</th>
+                    <th>Content of Backup</th>
+                    <th>Size of Backup</th>
+                    <th>Responsible User</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for backup in backup %}
+                <tr>
+                    <td>{{ backup[0] }}</td>
+                    <td>{{ backup[1] }}</td>
+                    <td>{{ backup[2] }}</td>
+                    <td>{{ backup[3] }}</td>
+                    <td>
+                        <a href="/edit_backup/{{ backup[1] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_backup/{{ backup[1] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_backup" class="btn btn-success">Add Backup</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>

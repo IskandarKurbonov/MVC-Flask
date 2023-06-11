@@ -2,25 +2,33 @@
 <html>
   <head>
     <title>Lebedev</title>
+    <!-- Подключение CSS-файла Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Lebedev Database</h1>
+    <div class="container">
+      <h1 class="text-center">Lebedev Database</h1>
+      <br>
 
-    <ul>
-      <li><a href="{{ backup_url }}">View Backup</a></li>
-      <li><a href="{{ user_url }}">View User</a></li>
-      <li><a href="{{ accessory_url }}">View Accessory</a></li>
-      <li><a href="{{ client_url }}">View Client</a></li>
-      <li><a href="{{ dealer_url }}">View Dealer</a></li>
-      <li><a href="{{ delivery_url }}">View Delivery</a></li>
-      <li><a href="{{ departure_url }}">View Departure</a></li>
-      <li><a href="{{ installation_and_deployment_url }}">View Installation and deployment</a></li>
-      <li><a href="{{ order_in_the_hall_url }}">View Order in the hall</a></li>
-      <li><a href="{{ purchase_url }}">View Purchase</a></li>
-      <li><a href="{{ report_for_tax_url }}">View Report for tax</a></li>
-      <li><a href="{{ service_department_url }}">View Service department</a></li>
-      <li><a href="{{ stock_url }}">View Stock</a></li>
-      <li><a href="{{ technique_url }}">View Technique</a></li>
-    </ul>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="{{ backup_url }}">View Backup</a></li>
+        <li class="list-group-item"><a href="{{ user_url }}">View User</a></li>
+        <li class="list-group-item"><a href="{{ accessory_url }}">View Accessory</a></li>
+        <li class="list-group-item"><a href="{{ client_url }}">View Client</a></li>
+        <li class="list-group-item"><a href="{{ dealer_url }}">View Dealer</a></li>
+        <li class="list-group-item"><a href="{{ delivery_url }}">View Delivery</a></li>
+        <li class="list-group-item"><a href="{{ departure_url }}">View Departure</a></li>
+        <li class="list-group-item"><a href="{{ installation_and_deployment_url }}">View Installation and deployment</a></li>
+        <li class="list-group-item"><a href="{{ order_in_the_hall_url }}">View Order in the hall</a></li>
+        <li class="list-group-item"><a href="{{ purchase_url }}">View Purchase</a></li>
+        <li class="list-group-item"><a href="{{ report_for_tax_url }}">View Report for tax</a></li>
+        <li class="list-group-item"><a href="{{ service_department_url }}">View Service department</a></li>
+        <li class="list-group-item"><a href="{{ stock_url }}">View Stock</a></li>
+        <li class="list-group-item"><a href="{{ technique_url }}">View Technique</a></li>
+      </ul>
+    </div>
+
+    <!-- Подключение JS-файла Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
-</html>
+</html> 

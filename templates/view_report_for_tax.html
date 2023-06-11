@@ -3,44 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Report for TAX List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Report for TAX List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Date of formation report</th>
-                <th>Date of sending report</th>
-                <th>Signature</th>
-                <th>To</th>
-                <th>From company</th>
-                <th>Content of report</th>
-                <th>Type of delivery report</th>
-                <th>Responsible user</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for report_for_tax in report_for_tax %}
-            <tr>
-                <td>{{ report_for_tax[0] }}</td>
-                <td>{{ report_for_tax[1] }}</td>
-                <td>{{ report_for_tax[2] }}</td>
-                <td>{{ report_for_tax[3] }}</td>
-                <td>{{ report_for_tax[4] }}</td>
-                <td>{{ report_for_tax[5] }}</td>
-                <td>{{ report_for_tax[6] }}</td>
-                <td>{{ report_for_tax[7] }}</td>
-                <td>
-                    <a href="/edit_report_for_tax/{{ report_for_tax[4] }}">Edit</a>
-                    <a href="/delete_report_for_tax/{{ report_for_tax[4] }}">Delete</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
-    <a href="/add_report_for_tax">Add Report for tax</a>
-    <a href="/">Back to list</a>
+    <div class="container">
+        <h1>Report for TAX List</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date of formation report</th>
+                    <th>Date of sending report</th>
+                    <th>Signature</th>
+                    <th>To</th>
+                    <th>From company</th>
+                    <th>Content of report</th>
+                    <th>Type of delivery report</th>
+                    <th>Responsible user</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report_for_tax in report_for_tax %}
+                <tr>
+                    <td>{{ report_for_tax[0] }}</td>
+                    <td>{{ report_for_tax[1] }}</td>
+                    <td>{{ report_for_tax[2] }}</td>
+                    <td>{{ report_for_tax[3] }}</td>
+                    <td>{{ report_for_tax[4] }}</td>
+                    <td>{{ report_for_tax[5] }}</td>
+                    <td>{{ report_for_tax[6] }}</td>
+                    <td>{{ report_for_tax[7] }}</td>
+                    <td>
+                        <a href="/edit_report_for_tax/{{ report_for_tax[4] }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete_report_for_tax/{{ report_for_tax[4] }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="/add_report_for_tax" class="btn btn-success">Add Report for tax</a>
+        <a href="/" class="btn btn-default">Back to list</a>
+    </div>
 </body>
 </html>
